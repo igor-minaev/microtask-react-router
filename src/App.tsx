@@ -15,9 +15,12 @@ export const App = () => {
                 </div>
                 <div className={styles.content}>
                     <Routes>
+                        <Route path='/' element={<Navigate to='/page1'/>}/>
+
                         <Route path='/page1' element={<PageOne/>}/>
                         <Route path='/page2' element={<PageTwo/>}/>
                         <Route path='/page3' element={<PageThree/>}/>
+
                         <Route path='/error404' element={<Error404/>}/>
                         <Route path='/*' element={<Navigate to='/error404'/>}/>
                     </Routes>
