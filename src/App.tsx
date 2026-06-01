@@ -5,12 +5,14 @@ import {Abibas} from "./components/pages/Abibas.tsx";
 import {Navigate, NavLink, Route, Routes} from "react-router-dom";
 import {Error404} from "./components/pages/Error404.tsx";
 import {S} from "./components/pages/_styles.ts";
+import {Model} from "./components/pages/Model";
 
 
 const PATH = {
     ADIDAS: '/adidas',
     PUMA: '/puma',
     ABIBAS: '/abibas',
+    MODEL: 'adidas/:id',
     ERROR404: '/*'
 } as const
 
@@ -31,6 +33,7 @@ export const App = () => {
                         <Route path={PATH.ADIDAS} element={<Adidas/>}/>
                         <Route path={PATH.PUMA} element={<Puma/>}/>
                         <Route path={PATH.ABIBAS} element={<Abibas/>}/>
+                        <Route path={PATH.MODEL} element={<Model/>}/>
 
                         {/*<Route path={PATH.ERROR404} element={<Error404/>}/>*/}
                         {/*<Route path='/*' element={<Navigate to={PATH.ERROR404}/>}/>*/}
