@@ -1,17 +1,16 @@
 import styles from "./components/Site.module.css";
-import {PageOne} from "./components/pages/PageOne.tsx";
-import {PageTwo} from "./components/pages/PageTwo.tsx";
-import {PageThree} from "./components/pages/PageThree.tsx";
+import {Adidas} from "./components/pages/Adidas.tsx";
+import {Puma} from "./components/pages/Puma.tsx";
+import {Abibas} from "./components/pages/Abibas.tsx";
 import {Navigate, NavLink, Route, Routes} from "react-router-dom";
 import {Error404} from "./components/pages/Error404.tsx";
 import {S} from "./components/pages/_styles.ts";
 
 
 const PATH = {
-    PAGE1: '/page1',
-    PAGE2: '/page2',
-    PAGE3: '/page3',
-    // ERROR404: '/page/error'
+    ADIDAS: '/adidas',
+    PUMA: '/puma',
+    ABIBAS: '/abibas',
     ERROR404: '/*'
 } as const
 
@@ -21,17 +20,17 @@ export const App = () => {
             <div className={styles.header}><h1>HEADER</h1></div>
             <div className={styles.body}>
                 <div className={styles.nav}>
-                    <S.NavWrapper><NavLink to={PATH.PAGE1}>Page1</NavLink></S.NavWrapper>
-                    <S.NavWrapper><NavLink to={PATH.PAGE2}>Page2</NavLink></S.NavWrapper>
-                    <S.NavWrapper><NavLink to={PATH.PAGE3}>Page3</NavLink></S.NavWrapper>
+                    <S.NavWrapper><NavLink to={PATH.ADIDAS}>Adidas</NavLink></S.NavWrapper>
+                    <S.NavWrapper><NavLink to={PATH.PUMA}>Puma</NavLink></S.NavWrapper>
+                    <S.NavWrapper><NavLink to={PATH.ABIBAS}>Abibas</NavLink></S.NavWrapper>
                 </div>
                 <div className={styles.content}>
                     <Routes>
-                        <Route path='/' element={<Navigate to='/page1'/>}/>
+                        <Route path='/' element={<Navigate to={PATH.ADIDAS}/>}/>
 
-                        <Route path={PATH.PAGE1} element={<PageOne/>}/>
-                        <Route path={PATH.PAGE2} element={<PageTwo/>}/>
-                        <Route path={PATH.PAGE3} element={<PageThree/>}/>
+                        <Route path={PATH.ADIDAS} element={<Adidas/>}/>
+                        <Route path={PATH.PUMA} element={<Puma/>}/>
+                        <Route path={PATH.ABIBAS} element={<Abibas/>}/>
 
                         {/*<Route path={PATH.ERROR404} element={<Error404/>}/>*/}
                         {/*<Route path='/*' element={<Navigate to={PATH.ERROR404}/>}/>*/}
