@@ -4,6 +4,7 @@ import {PageTwo} from "./components/pages/PageTwo.tsx";
 import {PageThree} from "./components/pages/PageThree.tsx";
 import {Navigate, NavLink, Route, Routes} from "react-router-dom";
 import {Error404} from "./components/pages/Error404.tsx";
+import styled from "styled-components";
 
 
 export const App = () => {
@@ -33,3 +34,19 @@ export const App = () => {
         </div>
     );
 }
+
+const NavWrapper=styled.div`
+    margin-left: 10px;
+    font-size: 20px;
+    &>a{
+        text-decoration: none;
+        color: #1e3786;
+    }
+    &>a.active{
+        text-decoration: none;
+        color: #03eaff;
+    }
+    &>a:hover{
+        color: steelblue;
+    }
+`
