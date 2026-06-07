@@ -12,7 +12,7 @@ const PATH = {
     ADIDAS: '/adidas',
     PUMA: '/puma',
     ABIBAS: '/abibas',
-    MODEL: 'adidas/:id',
+    MODEL: '/:model/:id',
     ERROR404: '/*'
 } as const
 
