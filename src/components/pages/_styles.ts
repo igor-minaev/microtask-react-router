@@ -10,7 +10,7 @@ const NavWrapper = styled.div`
     }
 
     & > a.active {
-        text-decoration: none;
+        text-decoration: underline;
         color: #03eaff;
     }
 
